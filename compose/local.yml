@@ -1,0 +1,22 @@
+version: '3.6'
+
+
+services:
+  nginx:
+    image: teamforce360_nginx
+    build:
+      context: ../
+      dockerfile: compose/Dockerfile
+      args:
+        - APP_ENVIRONMENT=production
+        - APP_API_URL=https://backdev.b2bcloud.com
+        # - APP_GTAG=
+    ports:
+      - 80:80
+    restart: always
+
+    logging: &logging
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"

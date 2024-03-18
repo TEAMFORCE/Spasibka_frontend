@@ -1,0 +1,27 @@
+version: '3.6'
+
+# networks:
+#   default:
+#     external:
+#       name: external-back
+
+services:
+  nginx:
+    image: $CI_REGISTRY_IMAGE:$CI_PIPELINE_ID
+    build:
+      context: ../
+      dockerfile: compose/Dockerfile
+      args:
+        - APP_ENVIRONMENT=production
+        - APP_API_URL=$APP_API_URL
+        - APP_GTAG=$APP_GTAG
+    restart: always
+    hostname: $NGINX_HOSTNAME
+    ports:
+      - 7180:80
+
+    logging: &logging
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"

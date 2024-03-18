@@ -1,0 +1,48 @@
+<template>
+  <div class="participants_icon">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 9C9.20914 9 11 7.20914 11 5C11 2.79086 9.20914 1 7 1C4.79086 1 3 2.79086 3 5C3 7.20914 4.79086 9 7 9Z"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1 18.9999V16.9999C1 15.939 1.42143 14.9216 2.17157 14.1715C2.92172 13.4213 3.93913 12.9999 5 12.9999H9C10.0609 12.9999 11.0783 13.4213 11.8284 14.1715C12.5786 14.9216 13 15.939 13 16.9999V18.9999M14 1.12988C14.8604 1.35018 15.623 1.85058 16.1676 2.55219C16.7122 3.2538 17.0078 4.11671 17.0078 5.00488C17.0078 5.89305 16.7122 6.75596 16.1676 7.45757C15.623 8.15918 14.8604 8.65958 14 8.87988M19 18.9999V16.9999C18.9949 16.117 18.6979 15.2607 18.1553 14.5643C17.6126 13.8679 16.8548 13.3706 16 13.1499"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ParticipantsIcon",
+  props: {
+    currentColor: {
+      default: null,
+    },
+  },
+  computed: {
+    color() {
+      if (this.currentColor) {
+        return this.currentColor;
+      } else {
+        return getComputedStyle(document.documentElement).getPropertyValue(
+          "--generalBrand"
+        );
+      }
+    },
+  },
+};
+</script>

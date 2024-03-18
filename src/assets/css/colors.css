@@ -1,0 +1,500 @@
+:root {
+  /* color scheme */
+  --extra1: #acd5f8;
+  --extra2: #fae38e;
+
+  --generalBrand: #f15929;
+  --generalBrandRGB: 241, 89, 41;
+  --secondaryColorBrand: #fff0d9; /* general-brand-secondary */
+  --secondaryColorBrandRGB: 255, 240, 217;
+
+  --generalColorWhite: #ffffff; /* general-negative */
+  --negativeSecondary: #eaeaea; /* minor-negative-secondary */
+
+  --generalContrast: #212121;
+  --generalColorSecondary: #8a8a8e;
+
+  --generalColorGrey: #cecece; /* general-midpoint */
+
+  --minorSuccess: #42ab44;
+  --minorSuccessSecondary: #edf8ed;
+
+  --minorError: #ff4e4e;
+  --minorErrorSecondary: #feefef;
+
+  --minorWarning: #fcce2a;
+  --minorWarningSecondary: #fff4ec;
+
+  --minorInfo: #2e5aac;
+  --minorInfoSecondaryColor: #eef2fa;
+  /* color scheme */
+
+  --surveyGraphCompleted: #90bb93;
+  --surveyGraphTaking: #f9c74f;
+  --surveyGraphNotCompleted: #f29393;
+
+  --generalBrandLight: #f37149;
+  --generalColorDark: #101e2c;
+
+  --systemLineGray: #dfe1eb;
+
+  --conditionalItemBackgroundHover: #f5f5f5;
+
+  --neutral93: #ecedef;
+  --neutral5: #d9d9d9;
+  --primary1: #e6f7ff;
+  --primary6: #1890ff;
+  --lightGray: #f3f3f3;
+
+  --backToChallenges: #181940;
+
+  --secondaryColorBrandDark: #ffe1b5;
+
+  --minorColorErrorPrimary: #fa1255;
+
+  --colorYellow: linear-gradient(140.69deg, #f8e4a1 8.24%, #fce17a 96.96%);
+
+  --transparent: rgba(0, 0, 0, 0);
+  --characterTitleDot85: rgba(0, 0, 0, 0.85);
+
+  --secondColo: #a4a5a6;
+  --secondOverlay: #f0f0f0;
+
+  --mainBackground: #f6f6f9;
+  --mainBlack: #1d1c1c;
+
+  /* date-picker */
+
+  /* select box */
+  --vs-border-color: var(--generalColorGrey);
+  --vs-border-width: 1px;
+  --vs-border-style: solid;
+  --vs-border-radius: 12px;
+  --vs-font-size: 14px;
+  --vs-line-height: 1.4;
+
+  --chart-color-bright-red: #df2121;
+  --chart-color-red: #ee5959;
+  --chart-color-light-red: #f29393;
+  --chart-color-bright-orange: #fa542a;
+  --chart-color-orange: #ff8d6f;
+  --chart-color-light-orange: #faae9a;
+  --chart-color-bright-yellow: #cef73a;
+  --chart-color-yellow: #f3df6d;
+  --chart-color-light-yellow: #fcf2bc;
+  --chart-color-bright-green: #4aeb4a;
+  --chart-color-green: #56d456;
+  --chart-color-light-green: #92ba92;
+  --chart-color-dirty-green: #68a7ad;
+  --chart-color-light-bright-blue: #0192f3;
+  --chart-color-light-blue: #45bff3;
+  --chart-color-light-white-blue: #7bcff3;
+  --chart-color-blue-light: #6567c9;
+  --chart-color-blue: #4a65fc;
+  --chart-color-blue-bright: #0a2cee;
+  --chart-color-bright-purple: #8a1cf0;
+  --chart-color-purple: #b1afff;
+  --chart-color-light-puprple: #ce7bb0;
+  --chart-color-bright-pink: #f715ff;
+  --chart-color-pink: #fa5fff;
+  --chart-color-light-pink: #fc9fff;
+  --chart-color-bright-brown: #854102;
+  --chart-color-brown: #ac6e33;
+  --chart-color-light-brown: #f3cba6;
+}
+#vs1__listbox::-webkit-scrollbar {
+  overflow-x: hidden !important;
+  display: none;
+}
+.vs__selected {
+  font-family: "Golos" !important;
+  font-size: 14px;
+  text-align: left !important;
+  margin: 2px 0 0 0;
+  color: var(--generalContrast);
+  cursor: pointer;
+}
+.vs__search {
+  cursor: pointer;
+}
+.vs__search::placeholder {
+  color: var(--generalColorSecondary);
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.vs__dropdown-menu {
+  z-index: 99999 !important;
+  background-color: var(--generalColorWhite) !important;
+  cursor: pointer;
+}
+.vs__dropdown-toggle {
+  cursor: pointer !important;
+}
+.dp__input {
+  height: 48px !important;
+  padding: 7px 14px !important;
+  background-color: var(--generalColorWhite);
+  color: var(--generalColorSecondary);
+}
+.dp__input::placeholder {
+  color: var(--generalColorSecondary);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-family: "SF Pro Text" !important;
+}
+.dp__clear_icon {
+  width: 24px;
+  margin: 2px 10px 0 0;
+}
+
+.dp__theme_light {
+  --dp-primary-color: var(--generalBrand);
+}
+.general-contrast-bg {
+  background-color: var(--generalContrast);
+}
+.general-brand-bg {
+  background-color: var(--generalBrand);
+}
+.general-secondary-bg {
+  background-color: var(--generalColorSecondary);
+}
+.general-white-bg {
+  background-color: var(--generalColorWhite);
+}
+.general-grey-bg {
+  background-color: var(--generalColorGrey);
+}
+.general-dark-bg {
+  background-color: var(--generalColorDark);
+}
+.conditional-item-hover-bg {
+  background-color: var(--conditionalItemBackgroundHover);
+}
+.neutral93-bg {
+  background-color: var(--neutral93);
+}
+.neutral5-bg {
+  background-color: var(--neutral5);
+}
+.primary1-bg {
+  background-color: var(--primary1);
+}
+.primary6-bg {
+  background-color: var(--primary6);
+}
+.back-to-challenges-bg {
+  background-color: var(--backToChallenges);
+}
+.brand-secondary-bg {
+  background-color: var(--secondaryColorBrand);
+}
+.minor-info-bg {
+  background-color: var(--minorInfo);
+}
+.minor-info-secondary-bg {
+  background-color: var(--minorInfoSecondaryColor);
+}
+.minor-error-bg {
+  background-color: var(--minorError);
+}
+.minor-error-primary-bg {
+  background-color: var(--minorColorErrorPrimary);
+}
+.minor-error-secondary-bg {
+  background-color: var(--minorErrorSecondary);
+}
+.minor-success-bg {
+  background-color: var(--minorSuccess);
+}
+.minor-success-secondary-bg {
+  background-color: var(--minorSuccessSecondary);
+}
+.yellow-gradient-bg {
+  background: var(--colorYellow);
+}
+.transparent-bg {
+  background-color: var(--transparent);
+}
+.character-title-dot85-bg {
+  background-color: var(--characterTitleDot85);
+}
+.second-colo-bg {
+  background-color: var(--secondColo);
+}
+.second-overlay-bg {
+  background-color: var(--secondOverlay);
+}
+.main-background-bg {
+  background-color: var(--mainBackground);
+}
+.main-black-bg {
+  background-color: var(--mainBlack);
+}
+.negative-secondary-bg {
+  background-color: var(--negativeSecondary);
+}
+.system-line-gray-bg {
+  background-color: var(--systemLineGray);
+}
+
+.general-contrast-color {
+  color: var(--generalContrast);
+}
+.general-brand-color {
+  color: var(--generalBrand);
+}
+.general-secondary-color {
+  color: var(--generalColorSecondary);
+}
+.general-white-color {
+  color: var(--generalColorWhite);
+}
+.general-grey-color {
+  color: var(--generalColorGrey);
+}
+.general-dark-color {
+  color: var(--generalColorDark);
+}
+.conditional-item-hover-color {
+  color: var(--conditionalItemBackgroundHover);
+}
+.neutral93-color {
+  color: var(--neutral93);
+}
+.neutral5-color {
+  color: var(--neutral5);
+}
+.primary1-color {
+  color: var(--primary1);
+}
+.primary6-color {
+  color: var(--primary6);
+}
+.back-to-challenges-color {
+  color: var(--backToChallenges);
+}
+.brand-secondary-color {
+  color: var(--secondaryColorBrand);
+}
+.minor-info-color {
+  color: var(--minorInfo);
+}
+.minor-info-secondary-color {
+  color: var(--minorInfoSecondaryColor);
+}
+.minor-error-color {
+  color: var(--minorError);
+}
+.minor-error-primary-color {
+  color: var(--minorColorErrorPrimary);
+}
+.minor-error-secondary-color {
+  color: var(--minorErrorSecondary);
+}
+.minor-success-color {
+  color: var(--minorSuccess);
+}
+.minor-success-secondary-color {
+  color: var(--minorSuccessSecondary);
+}
+.transparent-color {
+  color: var(--transparent);
+}
+.character-title-dot85-color {
+  color: var(--characterTitleDot85);
+}
+.second-colo-color {
+  color: var(--secondColo);
+}
+.second-overlay-color {
+  color: var(--secondOverlay);
+}
+.main-background-color {
+  color: var(--mainBackground);
+}
+.main-black-color {
+  color: var(--mainBlack);
+}
+.negative-secondary-color {
+  color: var(--negativeSecondary);
+}
+.system-line-gray-color {
+  color: var(--systemLineGray);
+}
+
+.v3dp__input_wrapper {
+  max-width: 477px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--generalColorGrey);
+  padding: 16px;
+}
+.challenge_date_picker {
+  max-width: 477px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.dp__input_wrap > .dp__icon {
+  display: none !important;
+}
+/* square checkbox */
+.checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #ecf0f3;
+  border-radius: 6px;
+  border: 1px solid var(--generalBrand) !important;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+  margin: 0;
+  background-color: var(--generalColorWhite) !important;
+}
+.checkbox:checked {
+  background-color: var(--generalBrand) !important;
+  background-image: url("@/assets/checkMark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.1s;
+}
+/*  */
+/* checkbox tumbler */
+/* radio button */
+._radio_button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid var(--generalColorWhite);
+  background-color: var(--secondaryColorBrand);
+  cursor: pointer;
+  border-radius: 100%;
+}
+._radio_button:checked::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  border: solid var(--generalColorWhite);
+  border-width: 0 3px 3px 0;
+  border-radius: 1px;
+  top: 3px;
+  left: 5px;
+  transform: rotate(45deg);
+}
+._radio_button:checked {
+  content: "";
+  background-color: var(--generalBrand);
+}
+/* radio button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 22px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--generalColorGrey);
+  border-radius: 34px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 1px;
+  bottom: 1px;
+  background-color: var(--generalColorWhite);
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: var(--generalBrand);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--generalBrand);
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+/*  */
+.vgt-responsive::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: var(--secondaryColorBrand);
+  border-radius: 50px;
+}
+.vgt-responsive::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: var(--generalBrand);
+  width: 8px;
+  cursor: pointer !important;
+}
+
+.mosha__toast {
+  z-index: 9999999 !important;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom_ceil {
+  font-family: "Golos";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--generalContrast);
+}
+
+.content_loading {
+  width: 100%;
+  height: 10%;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--generalColorWhite);
+  border-bottom-color: var(--generalBrand);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

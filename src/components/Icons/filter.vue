@@ -1,0 +1,44 @@
+<template>
+  <div class="filter_icon">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 11 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.22986 0.898926H9.60498C9.69776 0.931465 9.78186 0.98481 9.85084 1.05487C9.91982 1.12494 9.97185 1.20986 10.0029 1.30314C10.034 1.39641 10.0434 1.49557 10.0302 1.59301C10.0171 1.69045 9.9818 1.78358 9.9271 1.86529L6.7059 5.4086V9.91828L4.12894 7.98556V5.4086L0.907738 1.86529C0.853037 1.78358 0.817761 1.69045 0.804614 1.59301C0.791466 1.49557 0.800796 1.39641 0.831888 1.30314C0.862981 1.20986 0.91501 1.12494 0.983992 1.05487C1.05297 0.98481 1.13708 0.931465 1.22986 0.898926Z"
+        :stroke="color"
+        stroke-width="1.28848"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "FilterIcon",
+  props: {
+    currentColor: {
+      default: null,
+    },
+  },
+  computed: {
+    color() {
+      if (this.currentColor) {
+        return this.currentColor;
+      } else {
+        return getComputedStyle(document.documentElement).getPropertyValue(
+          "--generalBrand"
+        );
+      }
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

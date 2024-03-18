@@ -1,0 +1,51 @@
+<template>
+  <div class="history_icon">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 21 21"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.5 7V11L12.5 13"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1.5498 19.0001V14.0001H6.5498M1.5498 10.0001C1.7739 7.80013 2.80007 5.75968 4.43254 4.26803C6.06501 2.77639 8.1895 1.93795 10.4007 1.9127C12.6119 1.88744 14.755 2.67713 16.4211 4.1311C18.0872 5.58507 19.1597 7.60155 19.434 9.7958C19.7083 11.99 19.1651 14.2085 17.9082 16.0278C16.6512 17.8472 14.7684 19.1401 12.6191 19.6599C10.4697 20.1797 8.20421 19.89 6.2548 18.8461C4.30539 17.8022 2.80853 16.0772 2.0498 14.0001L1.5498 10.0001Z"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HistoryIcon",
+  props: {
+    currentColor: {
+      default: null,
+    },
+  },
+  computed: {
+    color() {
+      if (this.currentColor) {
+        return this.currentColor;
+      } else {
+        return getComputedStyle(document.documentElement).getPropertyValue(
+          "--generalBrand"
+        );
+      }
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

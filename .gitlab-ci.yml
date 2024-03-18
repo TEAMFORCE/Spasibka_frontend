@@ -1,0 +1,86 @@
+# ------------------------------------------------------------------------------
+# -------------------   GitcLab Front CI/CD Config  ----------------------------
+# ----------------------------  By Dodo325  ------------------------------------
+# -------------------------------- v1.6  ---------------------------------------
+# ------------------------------------------------------------------------------
+stages:
+  - build
+  - deploy
+
+variables:
+  DOCKER_COMPOSE_FILE: compose/develop.yml
+  PROJECT_NAME: dig-ref-${CI_COMMIT_REF_SLUG}-front
+  NGINX_HOSTNAME: dig_ref_${CI_COMMIT_REF_SLUG}_front
+  SRV_USER: $CD_SERVER_USER
+  SRV_HOST: $CD_SERVER_HOST
+
+before_script:
+  - echo "docker login"
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" $CI_REGISTRY --password-stdin
+
+# Tools
+# ------------------------------------------------------------------------------
+.ssh_connection: &ssh_connection
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - eval $(ssh-agent -s)
+  - echo "$CD_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - ssh-keyscan -t rsa  $SRV_HOST >> ~/.ssh/known_hosts
+
+.docker_compose_build: &docker_compose_build
+  - sed -i "s/https:\/\/gitlab.teamforce.ru/https:\/\/gitlab-ci-token:$CI_JOB_TOKEN@gitlab.teamforce.ru/g" package.json
+  - docker-compose -p ${DOCKER_COMPOSE_FILE} -f ${DOCKER_COMPOSE_FILE} build
+  - docker-compose -p ${DOCKER_COMPOSE_FILE} -f ${DOCKER_COMPOSE_FILE} push
+
+.docker_compose_deploy: &docker_compose_deploy
+  - *ssh_connection
+  - docker-compose -H "ssh://$SRV_USER@$SRV_HOST" -f ${DOCKER_COMPOSE_FILE} -p ${PROJECT_NAME} pull
+  - docker-compose -H "ssh://$SRV_USER@$SRV_HOST" -f ${DOCKER_COMPOSE_FILE} -p ${PROJECT_NAME} up -d
+
+.dev: &dev
+  variables:
+    APP_API_URL: $APP_API_URL_DEV
+    APP_GTAG: ""
+  tags:
+    - shell
+  only:
+    - dev
+
+.prod: &prod
+  variables:
+    APP_API_URL: $APP_API_URL_PROD
+    APP_GTAG: $APP_GTAG_PROD
+    DOCKER_COMPOSE_FILE: compose/production.yml
+  tags:
+    - shell
+  only:
+    - master
+
+# Build
+# ------------------------------------------------------------------------------
+build_dev:
+  <<: *dev
+  stage: build
+  script:
+    - *docker_compose_build
+
+build_prod:
+  <<: *prod
+  stage: build
+  script:
+    - *docker_compose_build
+
+# Deploy
+# ------------------------------------------------------------------------------
+deploy_dev:
+  <<: *dev
+  stage: deploy
+  script:
+    - *docker_compose_deploy
+
+deploy_prod:
+  <<: *prod
+  stage: deploy
+  script:
+    - *docker_compose_deploy

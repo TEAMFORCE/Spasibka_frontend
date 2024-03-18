@@ -1,0 +1,9 @@
+export const ANSWER_TYPE = {
+    SINGLE_CHOICE: 1,
+    MULTIPLE_CHOICE: 2,
+    TEXT_INPUT: 3,
+    SCALE: 4,
+    UPLOAD_FILE: 5,
+    SINGLE_GRID: 6,
+    MULTIPLE_GRID: 7
+}

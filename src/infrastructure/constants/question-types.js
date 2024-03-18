@@ -1,0 +1,6 @@
+export const QUESTION_TYPES = {
+    SINGLE_CHOICE: 1,
+    MULTIPLE_CHOICE: 2,
+    TEXT_INPUT: 3,
+    SCALE: 4
+}

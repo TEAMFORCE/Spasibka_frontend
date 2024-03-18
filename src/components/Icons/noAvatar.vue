@@ -1,0 +1,51 @@
+<template>
+  <div class="no_avatar_icon">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 21 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.915 2.296C7.00795 2.20224 7.11854 2.1278 7.2404 2.077C7.36226 2.0262 7.49297 2.00003 7.625 2H13.625C13.8902 2 14.1446 2.10536 14.3321 2.29289C14.5196 2.48043 14.625 2.73478 14.625 3C14.625 3.53043 14.8357 4.03914 15.2108 4.41421C15.5859 4.78929 16.0946 5 16.625 5H17.625C18.1554 5 18.6641 5.21071 19.0392 5.58579C19.4143 5.96086 19.625 6.46957 19.625 7V15M18.446 17.824C18.196 17.937 17.918 18 17.625 18H3.625C3.09457 18 2.58586 17.7893 2.21079 17.4142C1.83571 17.0391 1.625 16.5304 1.625 16V7C1.625 6.46957 1.83571 5.96086 2.21079 5.58579C2.58586 5.21071 3.09457 5 3.625 5H4.625C4.917 5 5.193 4.938 5.443 4.825"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M9.061 8.44C8.67377 8.67679 8.34532 8.99837 8.10038 9.3805C7.85545 9.76264 7.70042 10.1954 7.64697 10.6461C7.59351 11.0968 7.64303 11.5538 7.7918 11.9826C7.94056 12.4115 8.18469 12.8009 8.5058 13.1217C8.82691 13.4425 9.21662 13.6863 9.64558 13.8346C10.0746 13.983 10.5316 14.0321 10.9823 13.9782C11.433 13.9243 11.8655 13.7688 12.2474 13.5235C12.6293 13.2782 12.9506 12.9495 13.187 12.562M1.625 1L19.625 19"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "NoAvatarIcon",
+  props: {
+    currentColor: {
+      default: null,
+    },
+  },
+  computed: {
+    color() {
+      if (this.currentColor) {
+        return this.currentColor;
+      } else {
+        return getComputedStyle(document.documentElement).getPropertyValue(
+          "--generalBrand"
+        );
+      }
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

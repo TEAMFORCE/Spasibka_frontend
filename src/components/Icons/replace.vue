@@ -1,0 +1,44 @@
+<template>
+  <div class="replace_icon">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.5 11.0002C20.2554 9.24041 19.4391 7.60985 18.1766 6.35969C16.9142 5.10953 15.2758 4.30911 13.5137 4.08175C11.7516 3.85438 9.96362 4.21268 8.4252 5.10144C6.88678 5.9902 5.68325 7.36013 5 9.00019M4.5 5.00019V9.00019H8.5M4.5 13.0002C4.74456 14.76 5.56093 16.3905 6.82336 17.6407C8.08579 18.8909 9.72424 19.6913 11.4863 19.9186C13.2484 20.146 15.0364 19.7877 16.5748 18.8989C18.1132 18.0102 19.3168 16.6403 20 15.0002M20.5 19.0002V15.0002H16.5"
+        :stroke="color"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ReplaceIcon",
+  props: {
+    currentColor: {
+      default: null,
+    },
+  },
+  computed: {
+    color() {
+      if (this.currentColor) {
+        return this.currentColor;
+      } else {
+        return getComputedStyle(document.documentElement).getPropertyValue(
+          "--generalBrand"
+        );
+      }
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

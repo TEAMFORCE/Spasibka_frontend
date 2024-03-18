@@ -1,0 +1,91 @@
+.main-layout-page {
+    padding: 52px !important;
+}
+@media (max-width: 1000px){
+    .main-layout-page {
+        padding: 24px 24px 108px 24px !important;
+    }
+}
+@media (max-width: 550px){
+    .main-layout-page {
+        padding-bottom: 94px !important;
+    }
+}
+html{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background: var(--generalColorSecondary);
+    border: 12px solid transparent;
+    border-radius: 20px;
+    width: 10px;
+}
+.leaflet-control-attribution {
+    display: none !important;
+}
+.leaflet-control-zoom {
+    margin: 20px 0 0 20px !important;
+}
+.leaflet-popup-tip {
+    display: none;
+}
+.vs__dropdown-toggle {
+    height: 48px !important;
+    padding: 10px !important;
+}
+.v-select {
+    width: 100% !important;
+    background-color: var(--generalColorWhite);
+    border-radius: 10px;
+}
+/* .vs__selected-options {
+    height: 20px !important;
+} */
+
+.tooltip_container:hover {
+    cursor: pointer;
+}
+  
+.tooltip_container:hover::before,
+.tooltip_container:hover::after {
+    z-index: 4;
+    content: "";
+    position: absolute;
+    visibility: visible;
+    border: solid transparent;
+}
+
+.tooltip_container:hover::before {
+    content: attr(data-tooltip);
+    top: 120%; /* Increase gap between tooltip and icon */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    color: var(--generalColorWhite);
+    background-color: var(--generalColorSecondary);
+    border-radius: 4px;
+    font-size: 12px;
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+.tooltip_container:hover::after {
+    top: 110%; /* Adjust arrow positioning */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-width: 5px;
+    border-color: transparent transparent var(--generalColorSecondary) transparent;
+    visibility: hidden;
+}
+
+.tooltip_container[data-tooltip]:hover::before,
+.tooltip_container[data-tooltip]:hover::after {
+    visibility: visible;
+}
